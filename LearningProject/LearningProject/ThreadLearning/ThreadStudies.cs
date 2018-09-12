@@ -9,12 +9,19 @@ namespace LearningProject.ThreadLearning
     public class ThreadStudies
     {
         /// <summary>
-        /// Displays in console basic information for the current thread.
+        /// Displays in console basic information for the given thread.
         /// </summary>
-        public static void PrintCurrentThreadInfo()
+        public static void PrintThreadInfo(Thread th)
         {
-            Thread th = Thread.CurrentThread;
             Console.WriteLine($"Thread Name: {th.Name}. ID: {th.ManagedThreadId}. State: {th.ThreadState}");
+        }
+
+        /// <summary>
+        /// Displays in console a text informing a thread is starting.
+        /// </summary>
+        public static void CallToChildThread()
+        {
+            Console.WriteLine("Child Thread Starts");
         }
     }
 }

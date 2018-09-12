@@ -1,4 +1,6 @@
-﻿using LearningProject.ThreadLearning;
+﻿using System;
+using System.Threading;
+using LearningProject.ThreadLearning;
 
 namespace LearningProject
 {
@@ -10,7 +12,14 @@ namespace LearningProject
         static void Main(string[] args)
         {
             // Test your code here.
-            ThreadStudies.PrintCurrentThreadInfo();
+            ThreadStudies.PrintThreadInfo(Thread.CurrentThread);
+            ThreadStart childRef = new ThreadStart(ThreadStudies.CallToChildThread);
+            Console.WriteLine("In Main: Creating Child thread");
+
+            Thread childThread = new Thread(childRef);
+            ThreadStudies.PrintThreadInfo(childThread);
+            childThread.Start();
+            ThreadStudies.PrintThreadInfo(childThread);
         }
     }
 }
