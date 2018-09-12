@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LearningProject.ThreadLearning;
 
 namespace LearningProject
 {
+    /// <summary>
+    /// Main entry point for this learning and testing program.
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
+            // Test your code here.
+            ThreadStudies.PrintCurrentThreadInfo();
         }
     }
 }
